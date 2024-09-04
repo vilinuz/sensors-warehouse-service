@@ -8,6 +8,23 @@ This system comprises two microservices built on the Spring Boot framework, desi
 
 ### 1. Sensor Data Acquisition Service (SDAS)
 
+## System Requirements
+
+### Development Environment
+- **Java Development Kit (JDK)**: OpenJDK 22 (compatible with version 21)
+- **Framework**: Spring Boot 3.3
+
+### Operating System
+- **Primary Testing Environment**: GitBash
+- **Compatibility**: Most Linux distributions with Bash shell
+
+### Additional Tools
+- **Network Utility**: 
+  - Linux: Netcat
+  - Windows: NCat
+
+Before proceeding, please ensure all components are properly installed and configured in your development environment.
+
 #### Technical Specifications:
 - **Framework**: Spring Boot
 - **Communication Protocol**: UDP (User Datagram Protocol)
