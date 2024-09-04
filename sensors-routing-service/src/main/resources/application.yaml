@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: sensors-routing-service
+
+warehouse:
+  nats:
+    server:
+      uri: nats://sensor-nats-server:4222
+      user: sensor-publisher
+      password: changeme # TODO: encrypt password and keep it in Vault or ConfigMap
+
+  sensors:
+    - id: t1
+      subject: temperature
+      udp-port: 3344
+    - id: h1
+      subject: humidity
+      udp-port: 3355

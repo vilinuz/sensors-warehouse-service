@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "warehouse.udp.buffer-size",
+      "type": "java.lang.String",
+      "description": "Description for warehouse.udp.buffer-size."
+    },
+    {
+      "name": "warehouse.nats.server.user",
+      "type": "java.lang.String",
+      "description": "Description for warehouse.nats.server.user."
+    },
+    {
+      "name": "warehouse.nats.server.password",
+      "type": "java.lang.String",
+      "description": "Description for warehouse.nats.server.password."
+    }
+  ] }

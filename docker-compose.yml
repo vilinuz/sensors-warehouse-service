@@ -1,0 +1,48 @@
+services:
+  nats:
+    build:
+      context: nats
+      dockerfile: Dockerfile
+    container_name: sensor-nats-server
+    image: sensor-nats-server
+    hostname: sensor-nats-server
+    ports:
+      - "4222:4222/tcp"
+      - "8222:8222/tcp"
+    networks:
+      - nats-net
+
+  sensors-routing-service:
+    build:
+      context: sensors-routing-service
+      dockerfile: Dockerfile
+    container_name: sensors-routing-service
+    image: sensors-routing-service
+    hostname: sensors-routing-service
+    ports:
+      - "3344:3344/udp"
+      - "3355:3355/udp"
+    depends_on:
+      - nats
+    networks:
+      - nats-net
+
+  sensors-central-service:
+    build:
+      context: sensors-central-service
+      dockerfile: Dockerfile
+    container_name: sensors-central-service
+    image: sensors-central-service
+    hostname: sensors-central-service
+    ports:
+      - "8080:8080/tcp"
+    depends_on:
+      - nats
+    networks:
+      - nats-net
+
+networks:
+  nats-net:
+    name: nats-net
+    driver: bridge
+
