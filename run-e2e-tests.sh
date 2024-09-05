@@ -101,6 +101,10 @@ get_random_value() {
 }
 
 echo "${green}Cleaning up the Docker environment..${reset}"
+mvn clean install
+echo "${green}Done..${reset}"
+
+echo "${green}Cleaning up the Docker environment..${reset}"
 docker-compose down
 echo "${green}Done..${reset}"
 
